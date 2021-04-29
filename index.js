@@ -26,26 +26,16 @@ function writeQuestionData(questionId, name) {
 }
 // [END rtdb_write_new_Question]
 
-writeQuestionData("1", "UnderstandDialog")
-writeQuestionData("2", "Benefits")
-writeQuestionData("3", "Usage")
+//writeQuestionData("1", "UnderstandDialog")
+//writeQuestionData("2", "Benefits")
+//writeQuestionData("3", "Usage")
 
-function toggleOption1(postRef, questionId) {
-  postRef.transaction((post) => {
-    if (post) {
-      if (post.stars && post.stars[uid]) {
-        post.starCount--;
-        post.stars[uid] = null;
-      } else {
-        post.starCount++;
-        if (!post.stars) {
-          post.stars = {};
-        }
-        post.stars[uid] = true;
-      }
-    }
-    return post;
-  });
+writeAnswerData()
+
+function writeAnswerData() {
+  const update = {};
+  update [1 + '/' + "option1"] = firebase.database.ServerValue.increment(1)
+  firebase.database().ref().update(update);
 }
 
 
@@ -63,6 +53,7 @@ el2.addEventListener("click", () => document.getElementById("q1").style.display 
 el2.addEventListener("click", () => document.getElementById("q2").style.display = "flex");
 //el2.addEventListener("click", () => document.getElementsByClassName("positive")[0].classList.add("show"));
 el2.addEventListener("click", () => console.log("question 1: yes"));
+el2.addEventListener("click", () => {});
 
 // Add event listener to button with an arrow function
 const el3 = document.getElementById("no1");

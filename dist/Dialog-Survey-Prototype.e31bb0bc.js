@@ -22311,31 +22311,18 @@ function writeQuestionData(questionId, name) {
     option2: 0
   });
 } // [END rtdb_write_new_Question]
+//writeQuestionData("1", "UnderstandDialog")
+//writeQuestionData("2", "Benefits")
+//writeQuestionData("3", "Usage")
 
 
-writeQuestionData("1", "UnderstandDialog");
-writeQuestionData("2", "Benefits");
-writeQuestionData("3", "Usage");
+writeAnswerData();
 
-function toggleOption1(postRef, questionId) {
-  postRef.transaction(function (post) {
-    if (post) {
-      if (post.stars && post.stars[uid]) {
-        post.starCount--;
-        post.stars[uid] = null;
-      } else {
-        post.starCount++;
+function writeAnswerData() {
+  var update = {};
+  update[1 + '/' + "option1"] = _app.default.database.ServerValue.increment(1);
 
-        if (!post.stars) {
-          post.stars = {};
-        }
-
-        post.stars[uid] = true;
-      }
-    }
-
-    return post;
-  });
+  _app.default.database().ref().update(update);
 } // Add event listener to button with an arrow function
 
 
@@ -22362,7 +22349,8 @@ el2.addEventListener("click", function () {
 
 el2.addEventListener("click", function () {
   return console.log("question 1: yes");
-}); // Add event listener to button with an arrow function
+});
+el2.addEventListener("click", function () {}); // Add event listener to button with an arrow function
 
 var el3 = document.getElementById("no1"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
 
@@ -22456,7 +22444,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54010" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54696" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
