@@ -161,6 +161,58 @@ el3.addEventListener("click", function () {
 
 el3.addEventListener("click", function () {
   return console.log("question 1: no");
+}); // Add event listener to button with an arrow function
+
+var el4 = document.getElementById("yes2"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
+
+el4.addEventListener("click", function () {
+  return document.getElementById("q2").style.display = "none";
+});
+el4.addEventListener("click", function () {
+  return document.getElementById("q3").style.display = "flex";
+}); //el2.addEventListener("click", () => document.getElementsByClassName("positive")[0].classList.add("show"));
+
+el4.addEventListener("click", function () {
+  return console.log("question 2: Citizens");
+}); // Add event listener to button with an arrow function
+
+var el5 = document.getElementById("no2"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
+
+el5.addEventListener("click", function () {
+  return document.getElementById("q2").style.display = "none";
+});
+el5.addEventListener("click", function () {
+  return document.getElementById("q3").style.display = "flex";
+}); //el3.addEventListener("click", () => document.getElementsByClassName("negative")[0].classList.add("show"));
+
+el5.addEventListener("click", function () {
+  return console.log("question 2: Municipalities");
+}); // Add event listener to button with an arrow function
+
+var el6 = document.getElementById("yes3"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
+
+el6.addEventListener("click", function () {
+  return document.getElementById("q3").style.display = "none";
+});
+el6.addEventListener("click", function () {
+  return document.getElementById("final").style.display = "flex";
+}); //el2.addEventListener("click", () => document.getElementsByClassName("positive")[0].classList.add("show"));
+
+el6.addEventListener("click", function () {
+  return console.log("question 3: Everyday");
+}); // Add event listener to button with an arrow function
+
+var el7 = document.getElementById("no3"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
+
+el7.addEventListener("click", function () {
+  return document.getElementById("q3").style.display = "none";
+});
+el7.addEventListener("click", function () {
+  return document.getElementById("final").style.display = "flex";
+}); //el3.addEventListener("click", () => document.getElementsByClassName("negative")[0].classList.add("show"));
+
+el7.addEventListener("click", function () {
+  return console.log("question 3: One time");
 });
 },{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -190,7 +242,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62776" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54166" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
