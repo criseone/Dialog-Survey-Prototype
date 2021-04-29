@@ -84,7 +84,7 @@ img {
   display: flex;
 }
 
-.yes {
+.topleft {
   cursor: pointer;
   position: absolute;
 
@@ -96,9 +96,17 @@ img {
   
   font-size: 4em;
   line-height: 100%;
+  transition: all 1s ease;
+  padding: 0 0 0 0;
+  transform: rotate(0deg);
 }
 
-.no {
+.topleft:hover {
+  padding: 25px 100px;
+  transform: rotate(20deg);
+}
+
+.bottomright {
   cursor: pointer;
   position: absolute;
 
@@ -109,60 +117,14 @@ img {
 
   font-size: 4em;
   line-height: 100%;
+  transition: all 1s ease;
+  margin: 0 0 0 0;
+  transform: rotate(0deg);
 }
 
-.citizens {
-  cursor: pointer;
-  position: absolute;
-
-  width: auto;
-  height: 5%;
-  top: 25px;
-  left: 20px;
-
-  
-  font-size: 4em;
-  line-height: 100%;
-}
-
-.municipalities {
-  cursor: pointer;
-  position: absolute;
-
-  width: auto;
-  height: 5%;
-  bottom: 50px;
-  right: 20px;
-
-  font-size: 4em;
-  line-height: 100%;
-}
-
-.onetime {
-  cursor: pointer;
-  position: absolute;
-
-  width: auto;
-  height: 5%;
-  top: 25px;
-  left: 20px;
-
-  
-  font-size: 4em;
-  line-height: 100%;
-}
-
-.everyday {
-  cursor: pointer;
-  position: absolute;
-
-  width: auto;
-  height: 5%;
-  bottom: 50px;
-  right: 20px;
-
-  font-size: 4em;
-  line-height: 100%;
+.bottomright:hover {
+  padding: 25px 100px;
+  transform: rotate(20deg);
 }
 
 .questionbox{
