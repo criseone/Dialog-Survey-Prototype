@@ -14,6 +14,11 @@ body {
   height: 812px;
 }*/
 
+img {
+  height: 100%;
+  width: auto;
+}
+
 .start {
   display: flex;
   flex-direction: column;
@@ -45,7 +50,6 @@ body {
 .question {
   display: none;
   background: #FFFFFF;
-  border: 2px solid #111111;
   height: 100%;
   width: 50vh;
   position: relative;
@@ -83,87 +87,81 @@ body {
 .yes {
   cursor: pointer;
   position: absolute;
-  transform: rotate(270deg);
 
   width: auto;
   height: 5%;
-  top: 10px;
+  top: 25px;
   left: 20px;
 
   
-  font-size: 1.25em;
+  font-size: 4em;
   line-height: 100%;
 }
 
 .no {
   cursor: pointer;
-  transform: rotate(90deg);
   position: absolute;
 
   width: auto;
   height: 5%;
-  bottom: 10px;
+  bottom: 50px;
   right: 20px;
 
-  font-size: 1.25em;
+  font-size: 4em;
   line-height: 100%;
 }
 
 .citizens {
   cursor: pointer;
   position: absolute;
-  transform: rotate(270deg);
 
   width: auto;
-  height: 10%;
-  top: 10px;
+  height: 5%;
+  top: 25px;
   left: 20px;
 
   
-  font-size: 1.25em;
+  font-size: 4em;
   line-height: 100%;
 }
 
 .municipalities {
   cursor: pointer;
-  transform: rotate(90deg);
   position: absolute;
 
   width: auto;
-  height: 15%;
-  bottom: 20px;
+  height: 5%;
+  bottom: 50px;
   right: 20px;
 
-  font-size: 1.25em;
+  font-size: 4em;
   line-height: 100%;
 }
 
 .onetime {
   cursor: pointer;
   position: absolute;
-  transform: rotate(270deg);
 
   width: auto;
-  height: 18%;
-  top: 10px;
+  height: 5%;
+  top: 25px;
   left: 20px;
 
   
-  font-size: 1.25em;
+  font-size: 4em;
   line-height: 100%;
 }
 
 .everyday {
   cursor: pointer;
-  transform: rotate(90deg);
   position: absolute;
 
   width: auto;
-  height: 12%;
-  bottom: 20px;
+  height: 5%;
+  bottom: 50px;
   right: 20px;
 
-  font-size: 1.25em;
+  font-size: 4em;
   line-height: 100%;
 }
 

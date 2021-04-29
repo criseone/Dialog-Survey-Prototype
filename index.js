@@ -16,25 +16,23 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// [START rtdb_write_new_question]
-function writeQuestionData(questionId, name) {
-  firebase.database().ref(questionId).set({
-    question: name,
-    option1: 0,
-    option2: 0,
-  });
-}
-// [END rtdb_write_new_Question]
+//function writeQuestionData(questionId, name) {
+//  firebase.database().ref(questionId).set({
+//    question: name,
+//    option1: 0,
+//    option2: 0,
+//  });
+//}
+//
+//writeQuestionData("1", "GreetingBehaviour")
+//writeQuestionData("2", "DesinfectionUsage")
+//writeQuestionData("3", "MeaningOfLife")
 
-//writeQuestionData("1", "UnderstandDialog")
-//writeQuestionData("2", "Benefits")
-//writeQuestionData("3", "Usage")
+//writeAnswerData()
 
-writeAnswerData()
-
-function writeAnswerData() {
+function writeAnswerData(question, option) {
   const update = {};
-  update [1 + '/' + "option1"] = firebase.database.ServerValue.increment(1)
+  update [question + '/' + option] = firebase.database.ServerValue.increment(1)
   firebase.database().ref().update(update);
 }
 
@@ -53,7 +51,7 @@ el2.addEventListener("click", () => document.getElementById("q1").style.display 
 el2.addEventListener("click", () => document.getElementById("q2").style.display = "flex");
 //el2.addEventListener("click", () => document.getElementsByClassName("positive")[0].classList.add("show"));
 el2.addEventListener("click", () => console.log("question 1: yes"));
-el2.addEventListener("click", () => {});
+el2.addEventListener("click", () => writeAnswerData("1", "option1"));
 
 // Add event listener to button with an arrow function
 const el3 = document.getElementById("no1");
@@ -62,6 +60,7 @@ el3.addEventListener("click", () => document.getElementById("q1").style.display 
 el3.addEventListener("click", () => document.getElementById("q2").style.display = "flex");
 //el3.addEventListener("click", () => document.getElementsByClassName("negative")[0].classList.add("show"));
 el3.addEventListener("click", () => console.log("question 1: no"));
+el3.addEventListener("click", () => writeAnswerData("1", "option2"));
 
 
 // Add event listener to button with an arrow function
@@ -71,6 +70,7 @@ el4.addEventListener("click", () => document.getElementById("q2").style.display 
 el4.addEventListener("click", () => document.getElementById("q3").style.display = "flex");
 //el2.addEventListener("click", () => document.getElementsByClassName("positive")[0].classList.add("show"));
 el4.addEventListener("click", () => console.log("question 2: Citizens"));
+el4.addEventListener("click", () => writeAnswerData("2", "option1"));
 
 // Add event listener to button with an arrow function
 const el5 = document.getElementById("no2");
@@ -79,6 +79,7 @@ el5.addEventListener("click", () => document.getElementById("q2").style.display 
 el5.addEventListener("click", () => document.getElementById("q3").style.display = "flex");
 //el3.addEventListener("click", () => document.getElementsByClassName("negative")[0].classList.add("show"));
 el5.addEventListener("click", () => console.log("question 2: Municipalities"));
+el5.addEventListener("click", () => writeAnswerData("2", "option2"));
 
 // Add event listener to button with an arrow function
 const el6 = document.getElementById("yes3");
@@ -87,6 +88,7 @@ el6.addEventListener("click", () => document.getElementById("q3").style.display 
 el6.addEventListener("click", () => document.getElementById("final").style.display = "flex");
 //el2.addEventListener("click", () => document.getElementsByClassName("positive")[0].classList.add("show"));
 el6.addEventListener("click", () => console.log("question 3: Everyday"));
+el6.addEventListener("click", () => writeAnswerData("3", "option1"));
 
 // Add event listener to button with an arrow function
 const el7 = document.getElementById("no3");
@@ -95,4 +97,5 @@ el7.addEventListener("click", () => document.getElementById("q3").style.display 
 el7.addEventListener("click", () => document.getElementById("final").style.display = "flex");
 //el3.addEventListener("click", () => document.getElementsByClassName("negative")[0].classList.add("show"));
 el7.addEventListener("click", () => console.log("question 3: One time"));
+el7.addEventListener("click", () => writeAnswerData("3", "option2"));
 

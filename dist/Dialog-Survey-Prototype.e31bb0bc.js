@@ -22301,26 +22301,23 @@ var config = {
   storageBucket: "dialog-97777.appspot.com"
 };
 
-_app.default.initializeApp(config); // [START rtdb_write_new_question]
+_app.default.initializeApp(config); //function writeQuestionData(questionId, name) {
+//  firebase.database().ref(questionId).set({
+//    question: name,
+//    option1: 0,
+//    option2: 0,
+//  });
+//}
+//
+//writeQuestionData("1", "GreetingBehaviour")
+//writeQuestionData("2", "DesinfectionUsage")
+//writeQuestionData("3", "MeaningOfLife")
+//writeAnswerData()
 
 
-function writeQuestionData(questionId, name) {
-  _app.default.database().ref(questionId).set({
-    question: name,
-    option1: 0,
-    option2: 0
-  });
-} // [END rtdb_write_new_Question]
-//writeQuestionData("1", "UnderstandDialog")
-//writeQuestionData("2", "Benefits")
-//writeQuestionData("3", "Usage")
-
-
-writeAnswerData();
-
-function writeAnswerData() {
+function writeAnswerData(question, option) {
   var update = {};
-  update[1 + '/' + "option1"] = _app.default.database.ServerValue.increment(1);
+  update[question + '/' + option] = _app.default.database.ServerValue.increment(1);
 
   _app.default.database().ref().update(update);
 } // Add event listener to button with an arrow function
@@ -22350,7 +22347,9 @@ el2.addEventListener("click", function () {
 el2.addEventListener("click", function () {
   return console.log("question 1: yes");
 });
-el2.addEventListener("click", function () {}); // Add event listener to button with an arrow function
+el2.addEventListener("click", function () {
+  return writeAnswerData("1", "option1");
+}); // Add event listener to button with an arrow function
 
 var el3 = document.getElementById("no1"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
 
@@ -22363,6 +22362,9 @@ el3.addEventListener("click", function () {
 
 el3.addEventListener("click", function () {
   return console.log("question 1: no");
+});
+el3.addEventListener("click", function () {
+  return writeAnswerData("1", "option2");
 }); // Add event listener to button with an arrow function
 
 var el4 = document.getElementById("yes2"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
@@ -22376,6 +22378,9 @@ el4.addEventListener("click", function () {
 
 el4.addEventListener("click", function () {
   return console.log("question 2: Citizens");
+});
+el4.addEventListener("click", function () {
+  return writeAnswerData("2", "option1");
 }); // Add event listener to button with an arrow function
 
 var el5 = document.getElementById("no2"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
@@ -22389,6 +22394,9 @@ el5.addEventListener("click", function () {
 
 el5.addEventListener("click", function () {
   return console.log("question 2: Municipalities");
+});
+el5.addEventListener("click", function () {
+  return writeAnswerData("2", "option2");
 }); // Add event listener to button with an arrow function
 
 var el6 = document.getElementById("yes3"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
@@ -22402,6 +22410,9 @@ el6.addEventListener("click", function () {
 
 el6.addEventListener("click", function () {
   return console.log("question 3: Everyday");
+});
+el6.addEventListener("click", function () {
+  return writeAnswerData("3", "option1");
 }); // Add event listener to button with an arrow function
 
 var el7 = document.getElementById("no3"); // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
@@ -22415,6 +22426,9 @@ el7.addEventListener("click", function () {
 
 el7.addEventListener("click", function () {
   return console.log("question 3: One time");
+});
+el7.addEventListener("click", function () {
+  return writeAnswerData("3", "option2");
 });
 },{"firebase/app":"node_modules/firebase/app/dist/index.esm.js","firebase/database":"node_modules/firebase/database/dist/index.esm.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -22444,7 +22458,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54696" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60445" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
