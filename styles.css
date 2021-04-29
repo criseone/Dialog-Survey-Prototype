@@ -20,7 +20,7 @@ body {
   justify-content: center;
   align-items:center;
 
-  background-image: url("/assets/mobilebg.png");
+  background-image: url("./assets/mobilebg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

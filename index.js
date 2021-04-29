@@ -1,6 +1,7 @@
 
-import firebase from "firebase";
+import firebase from "firebase/app";
 import "firebase/database";
+
 
 // Set the configuration for your app
 // TODO: Replace with your project's config object
@@ -15,23 +16,38 @@ var config = {
 };
 firebase.initializeApp(config);
 
-function writeUserData(userId, name, email, imageUrl) {
-  firebase.database().ref('users/' + userId).set({
-    username: name,
-    email: email,
-    profile_picture : imageUrl
+// [START rtdb_write_new_question]
+function writeQuestionData(questionId, name) {
+  firebase.database().ref(questionId).set({
+    question: name,
+    option1: 0,
+    option2: 0,
+  });
+}
+// [END rtdb_write_new_Question]
+
+writeQuestionData("1", "UnderstandDialog")
+writeQuestionData("2", "Benefits")
+writeQuestionData("3", "Usage")
+
+function toggleOption1(postRef, questionId) {
+  postRef.transaction((post) => {
+    if (post) {
+      if (post.stars && post.stars[uid]) {
+        post.starCount--;
+        post.stars[uid] = null;
+      } else {
+        post.starCount++;
+        if (!post.stars) {
+          post.stars = {};
+        }
+        post.stars[uid] = true;
+      }
+    }
+    return post;
   });
 }
 
-// Get a reference to the database service
-var database = firebase.database();
-
-
-// Function to change the content of Start button
-function modifyText(new_text) {
-  const start = document.getElementById("start");
-  start.firstChild.nodeValue = new_text;
-}
 
 // Add event listener to button with an arrow function
 const el1 = document.getElementById("action");
@@ -55,6 +71,7 @@ el3.addEventListener("click", () => document.getElementById("q1").style.display 
 el3.addEventListener("click", () => document.getElementById("q2").style.display = "flex");
 //el3.addEventListener("click", () => document.getElementsByClassName("negative")[0].classList.add("show"));
 el3.addEventListener("click", () => console.log("question 1: no"));
+
 
 // Add event listener to button with an arrow function
 const el4 = document.getElementById("yes2");
@@ -87,11 +104,4 @@ el7.addEventListener("click", () => document.getElementById("q3").style.display 
 el7.addEventListener("click", () => document.getElementById("final").style.display = "flex");
 //el3.addEventListener("click", () => document.getElementsByClassName("negative")[0].classList.add("show"));
 el7.addEventListener("click", () => console.log("question 3: One time"));
-
-
-
-
-
-
-
 
