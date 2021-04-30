@@ -1,0 +1,87 @@
+body {
+  background: #00FFC2;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+h1{
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 114.3%;
+  margin: 0 0 2vh 0;
+  line-height: 1;
+
+  color: #111111;
+}
+
+p{
+  font-family: Noto Sans HK;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9em;
+  margin: 0;
+  line-height: 114.3%;
+
+  /* or 19px */
+
+  color: #111111;
+}
+
+span{
+  display: block;
+  float: left;
+  clear: both;
+}
+
+.logo {
+  width: 30%;
+  height: auto;
+  margin: 0 auto;
+  padding: 2vh 0;
+  text-align: center;
+}
+
+.box {
+  border: 2px solid !important;
+}
+
+.box, .innerBox{
+  border: 1px solid;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.innerBox{
+  width: 100%;
+  margin-top: 2vh;
+  display: flow-root;
+}
+
+.resultat{
+  margin-bottom: 3vh;
+}
+
+.result{
+  height: 20px;
+  float: left;
+  border: 1px solid;
+  margin-left: 5%;
+  width: 85%
+}
+
+.color{
+  background: #111111;
+  height: 100%;
+  width: 20%;
+}

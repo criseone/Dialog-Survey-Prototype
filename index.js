@@ -37,6 +37,7 @@ function writeAnswerData(question, option) {
 }
 
 
+
 // Add event listener to button with an arrow function
 const el1 = document.getElementById("action");
 // el.addEventListener("click", () => { modifyText("Lit!"); }, false);
@@ -98,4 +99,3 @@ el7.addEventListener("click", () => document.getElementById("final").style.displ
 //el3.addEventListener("click", () => document.getElementsByClassName("negative")[0].classList.add("show"));
 el7.addEventListener("click", () => console.log("question 3: One time"));
 el7.addEventListener("click", () => writeAnswerData("3", "option2"));
-
