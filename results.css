@@ -16,7 +16,7 @@ h1{
   font-weight: bold;
   font-size: 44px;
   line-height: 114.3%;
-  margin: 0 0 2vh 0;
+  margin: 0 0 3vh 0;
   line-height: 1;
 
   color: #111111;
@@ -39,14 +39,16 @@ span{
   display: block;
   float: left;
   clear: both;
+  font-size: 1.4em;
 }
 
 .logo {
-  width: 30%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
   padding: 2vh 0;
   text-align: center;
+  max-width: 600px;
 }
 
 .box {
@@ -56,10 +58,11 @@ span{
 .box, .innerBox{
   border: 1px solid;
   border-radius: 5px;
-  width: 50%;
+  width: 90%;
   margin: 0 auto;
-  padding: 5%;
+  padding: 20px;
   box-sizing: border-box;
+  max-width: 800px;
 }
 
 .innerBox{
@@ -72,16 +75,47 @@ span{
   margin-bottom: 3vh;
 }
 
+.resultat:last-child{
+  margin-bottom: 10px;
+}
+
 .result{
-  height: 20px;
+  height: 30px;
   float: left;
   border: 1px solid;
   margin-left: 5%;
   width: 85%
 }
 
+.result:first-of-type{
+  margin-bottom: 10px;
+}
+
 .color{
   background: #111111;
   height: 100%;
-  width: 20%;
+}
+
+.one{
+  width: 52%;
+}
+
+.two{
+  width: 48%;
+}
+
+.three{
+  width: 60%;
+}
+
+.four{
+  width: 40%;
+}
+
+.five{
+  width: 52%;
+}
+
+.six{
+  width: 48%;
 }
