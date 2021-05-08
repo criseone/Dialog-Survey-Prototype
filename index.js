@@ -36,6 +36,12 @@ function writeAnswerData(question, option) {
   firebase.database().ref().update(update);
 }
 
+function read(question) {
+   firebase.database().ref().child(question).get().then((snapshot) => { if(snapshot.exists()) { console.log(snapshot.val().option1); } }) 
+  }
+
+  read(1)
+
 
 
 // Add event listener to button with an arrow function
